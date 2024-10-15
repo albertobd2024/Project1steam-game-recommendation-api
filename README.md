@@ -1,86 +1,86 @@
-# Proyecto Individual Nº1: Sistema de Recomendación para Steam
+# Proyecto Individual de MLOps: Sistema de Recomendación de Videojuegos
 
 ## Descripción del Proyecto
 
-Este proyecto tiene como objetivo el desarrollo de un sistema de recomendación de videojuegos para la plataforma Steam, utilizando técnicas de Machine Learning y procesamiento de datos en un entorno de MLOps. La solución incluye el diseño y deployment de una API RESTful con FastAPI, que permite realizar consultas sobre los datos de los juegos y usuarios, así como un sistema de recomendación basado en la similitud entre juegos y usuarios.
+Este proyecto consiste en el desarrollo de una API utilizando **FastAPI** para implementar un sistema de recomendación de videojuegos para la plataforma Steam. La API permite obtener información sobre los juegos, reseñas de usuarios y datos relacionados con los géneros de los videojuegos. Además, el proyecto incluye análisis de sentimientos sobre las reseñas de los usuarios y la clasificación de los juegos más jugados y más populares.
 
-### Rol del MLOps Engineer
+## Cómo Usar este Proyecto
 
-Como parte de este proyecto, he trabajado en la creación de un pipeline completo de Machine Learning que cubre el ciclo de vida de los datos: desde la limpieza y transformación de los datasets hasta el entrenamiento de un modelo de recomendación. Además, se ha construido una API que expone estos resultados a través de endpoints específicos para su consumo por otras aplicaciones o equipos dentro de la empresa.
+### Clonar el repositorio
 
-## Datasets Utilizados
+```bash
+git clone https://github.com/tuusuario/tu-repositorio.git
+cd tu-repositorio
+Instalar dependencias
+Asegúrate de tener Python 3.7 o superior instalado. Instala las dependencias usando pip:
+pip install -r requirements.txt
+Ejecutar la API localmente
+Para ejecutar la API en tu entorno local, utiliza el siguiente comando:
+uvicorn main:app --reload
+Acceso desde Railway
+Este proyecto está desplegado en Railway. Puedes acceder a los endpoints de la API utilizando la URL proporcionada por Railway:
+https://{tu-url-de-railway}/
+Endpoints de la API
+Aquí te presentamos los 6 endpoints disponibles en la API y sus descripciones:
 
-1. **steam_games.json.gz**: Contiene información sobre los juegos disponibles en Steam, incluyendo géneros, precios y desarrolladores.
-2. **user_reviews.json.gz**: Incluye reseñas de los usuarios sobre los juegos, que han sido analizadas mediante técnicas de NLP para clasificar el sentimiento de las reseñas (positivo, neutro o negativo).
-3. **users_items.json.gz**: Información sobre las interacciones de los usuarios con los juegos, incluyendo horas jugadas y recomendación de juegos.
+1. Saludo Inicial:
 
-## Funcionalidades de la API
+Descripción: Endpoint de bienvenida que verifica que la API está funcionando correctamente.
+URL: /
+Respuesta:
+{"message": "API is working!"}
 
-La API cuenta con los siguientes endpoints:
+2. Items más jugados:
 
-- **`/developer/{desarrollador}`**: Devuelve la cantidad de ítems y el porcentaje de contenido gratuito por año, según la empresa desarrolladora.
-  
-- **`/userdata/{user_id}`**: Devuelve información sobre el dinero gastado por el usuario, porcentaje de recomendación en base a las reseñas y la cantidad de ítems jugados.
+Descripción: Devuelve una lista de los ítems (juegos) más jugados.
+URL: /items/most_played?limit=10&offset=0
+Respuesta: Lista de ítems con información de jugabilidad.
 
-- **`/UserForGenre/{genero}`**: Muestra el usuario que acumula más horas jugadas en un género dado y una lista con la acumulación de horas jugadas por año de lanzamiento.
+3. Reseñas positivas:
 
-- **`/best_developer_year/{año}`**: Devuelve los 3 mejores desarrolladores con juegos más recomendados por los usuarios para el año seleccionado.
+Descripción: Obtiene una lista de reseñas con sentimiento positivo.
+URL: /reviews/positive?limit=10&offset=0
+Respuesta: Lista de reseñas con análisis de sentimiento positivo.
 
-- **`/developer_reviews_analysis/{desarrollador}`**: Análisis de reseñas de los juegos de un desarrollador específico, mostrando la cantidad de reseñas positivas y negativas.
+4. Juegos gratuitos:
 
-- **`/recomendacion_juego/{id_producto}`**: Recomendación basada en la similitud entre juegos (modelo item-item).
+Descripción: Obtiene una lista de juegos que son gratuitos.
+URL: /games/free?limit=10&offset=0
+Respuesta: Lista de juegos con precio igual a cero.
 
-- **`/recomendacion_usuario/{id_usuario}`**: Recomendación basada en la similitud entre usuarios (modelo user-item).
+5. Juegos de género Action:
 
-## Feature Engineering
+Descripción: Filtra y devuelve los juegos del género "Action".
+URL: /games/action?limit=10&offset=0
 
-Se ha creado una nueva columna llamada `sentiment_analysis` en el dataset de reseñas de usuarios. Esta columna clasifica las reseñas en tres categorías:
-- 0: Reseña negativa
-- 1: Reseña neutral
-- 2: Reseña positiva
+Respuesta: Lista de juegos del género de acción.
 
-En caso de que una reseña esté ausente, se le asigna el valor 1 (neutral).
+6. Reseñas más largas:
 
-## Análisis Exploratorio de Datos (EDA)
+Descripción: Obtiene una lista de reseñas con mayor longitud.
+URL: /reviews/longest?limit=10&offset=0
+Respuesta: Lista de reseñas ordenadas por la longitud de texto.
 
-Se ha realizado un análisis exploratorio de los datasets para identificar patrones, anomalías y relaciones entre las variables. Este proceso incluye la identificación de outliers y la generación de visualizaciones como nubes de palabras para entender mejor la frecuencia de ciertos términos en los títulos y descripciones de los juegos.
+Tecnologías Utilizadas
+FastAPI: Framework para la creación de APIs rápidas y eficientes.
+Ngrok: Herramienta para exponer la API de forma local para pruebas rápidas.
+Railway: Plataforma de despliegue para la API.
+Pandas: Librería utilizada para el procesamiento y análisis de los datos.
+Python: Lenguaje principal del proyecto.
+Despliegue
+El proyecto ha sido desplegado exitosamente en Railway. Para acceder a la API en Railway, puedes utilizar la URL:
+https://{tu-url-de-railway}/
+Instrucciones Adicionales
+Para cualquier duda o sugerencia, puedes ponerte en contacto a través de GitHub o abrir un "issue" en el repositorio.
 
-## Modelo de Recomendación
+Video Demostrativo
+El video de demostración del proyecto puede encontrarse en este enlace [enlace a video].
 
-Se han implementado dos enfoques para el sistema de recomendación:
-1. **Recomendación ítem-ítem**: Basada en la similitud entre juegos, utilizando la similitud del coseno para recomendar juegos similares a uno seleccionado.
-2. **Recomendación usuario-ítem**: Basada en la similitud entre usuarios, donde se recomiendan juegos que les gustaron a usuarios similares al usuario consultado.
+1. Modifica el texto donde dice `https://{tu-url-de-railway}/` con la URL de Railway una vez que despliegues la API.
+2. El video demostrativo se puede añadir después de haberlo grabado y subido a una plataforma (YouTube, Google Drive, etc.).
 
-Ambos modelos están expuestos a través de la API, permitiendo consultas dinámicas.
+Si estás listo, puedo generar este archivo `README.md` y subirlo junto al código que tienes para que lo utilices en tu proyecto.
 
-## Deployment
 
-El proyecto ha sido deployado en **Railway**, y la API puede ser consumida desde cualquier dispositivo con acceso a internet. Esto asegura que tanto los modelos de recomendación como los datos estén disponibles para los departamentos de Analytics y Machine Learning.
 
-## Video Demostrativo
-
-El video de demostración del proyecto muestra el funcionamiento de la API, las consultas realizadas y una breve explicación de los modelos utilizados. Tiene una duración de menos de 7 minutos y puede ser visualizado en el siguiente enlace:
-
-[Enlace al video](URL_DEL_VIDEO)
-
-## Estructura del Repositorio
-
-- `proyecto1_machinelearning_alberto_bernal.py`: Código del proyecto, incluyendo la limpieza de datos, entrenamiento de modelos y definición de la API.
-- `steam_games_cleaned_simple.csv`: Dataset de juegos, después de la limpieza y transformación.
-- `users_items_preprocesado.csv`: Dataset de usuarios y sus interacciones, listo para el modelo.
-- `requirements.txt`: Archivo con las dependencias necesarias para ejecutar el proyecto.
-- `README.md`: Este archivo.
-
-## Requisitos Técnicos
-
-Para ejecutar el proyecto de forma local, se necesita tener instaladas las siguientes dependencias:
-- Python 3.8 o superior
-- FastAPI
-- Pandas
-- Scikit-learn
-- Uvicorn
-
-## Conclusión
-
-Este proyecto es una demostración del ciclo completo de MLOps, desde la recolección y tratamiento de datos hasta la implementación de un sistema de recomendación y su exposición a través de una API. A través de este MVP, se entrega una solución funcional y escalable para la plataforma Steam, facilitando la personalización de recomendaciones para los usuarios de la plataforma.
 
