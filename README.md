@@ -17,9 +17,10 @@ pip install -r requirements.txt
 Ejecutar la API localmente
 Para ejecutar la API en tu entorno local, utiliza el siguiente comando:
 uvicorn main:app --reload
-Acceso desde Railway
-Este proyecto está desplegado en Railway. Puedes acceder a los endpoints de la API utilizando la URL proporcionada por Railway:
-https://{tu-url-de-railway}/
+
+Acceso desde Render 
+Este proyecto está desplegado en Render. Puedes acceder a los endpoints de la API utilizando la URL proporcionada por Render:
+
 Endpoints de la API
 Aquí te presentamos los 6 endpoints disponibles en la API y sus descripciones:
 
