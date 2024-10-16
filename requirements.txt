@@ -1,4 +1,7 @@
-fastapi==0.115.0
-uvicorn==0.31.1
-pandas==2.2.2
-pyngrok==7.2.0
+fastapi
+uvicorn
+pandas
+scikit-learn
+matplotlib
+nest-asyncio
+pyngrok
