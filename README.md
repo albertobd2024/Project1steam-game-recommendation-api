@@ -1,3 +1,9 @@
+
+  
+
+
+
+
 # Proyecto Individual de MLOps: Sistema de Recomendación de Videojuegos
 
 ## Descripción del Proyecto
