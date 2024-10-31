@@ -2,88 +2,91 @@
  ![banner-proyecto-1](https://github.com/user-attachments/assets/636b5174-2b09-45a4-a2d2-df92a7a36b25)
    
 
+🚀 Proyecto Individual de MLOps: Sistema de Recomendación de Videojuegos
+🎮 Descripción del Proyecto
+Este proyecto desarrolla una API utilizando FastAPI para implementar un sistema de recomendación de videojuegos en Steam. Incluye:
 
+Información detallada de videojuegos 🎲
+Análisis de reseñas de usuarios 📝
+Clasificación de juegos por popularidad, género, y más 💡
 
+🛠️ Clonación e Instalación
+Clonar el repositorio
 
-# Proyecto Individual de MLOps: Sistema de Recomendación de Videojuegos
-
-## Descripción del Proyecto
-
-Este proyecto consiste en el desarrollo de una API utilizando **FastAPI** para implementar un sistema de recomendación de videojuegos para la plataforma Steam. La API permite obtener información sobre los juegos, reseñas de usuarios y datos relacionados con los géneros de los videojuegos. Además, el proyecto incluye análisis de sentimientos sobre las reseñas de los usuarios y la clasificación de los juegos más jugados y más populares.
-
-## Cómo Usar este Proyecto
-
-### Clonar el repositorio
-
-```bash
-git clone https://https://github.com/albertobd2024/Project1steam-game-recommendation-api.git
-cd tu-repositorio
+bash
+Copiar código
+git clone https://github.com/albertobd2024/Project1steam-game-recommendation-api.git
+cd Project1steam-game-recommendation-api
 Instalar dependencias
-Asegúrate de tener Python 3.7 o superior instalado. Instala las dependencias usando pip:
+Asegúrate de tener Python 3.7 o superior. Instala las dependencias:
+
+bash
+Copiar código
 pip install -r requirements.txt
-Ejecutar la API localmente
-Para ejecutar la API en tu entorno local, utiliza el siguiente comando:
+
+🏃‍♂️ Ejecución de la API Localmente
+Para ejecutar la API en tu entorno local, usa:
+
+bash
+Copiar código
 uvicorn main:app --reload
+🌐 Acceso desde Render
+El proyecto está desplegado en Render y accesible en:
 
-Acceso desde Render 
-Este proyecto está desplegado en Render. Puedes acceder a los endpoints de la API utilizando la URL proporcionada por Render:
+🔗 https://project1steam-game-recommendation-api.onrender.com
 
-https://project1steam-game-recommendation-api.onrender.com
+📂 Endpoints de la API
+Aquí te presentamos los endpoints disponibles en la API y sus descripciones:
 
-Endpoints de la API
-Aquí te presentamos los 6 endpoints disponibles en la API y sus descripciones:
+👋 Saludo Inicial
 
-1. Saludo Inicial:
-
-Descripción: Endpoint de bienvenida que verifica que la API está funcionando correctamente.
+Descripción: Endpoint de bienvenida para verificar el funcionamiento de la API.
 URL: /
 Respuesta:
+json
+Copiar código
 {"message": "API is working!"}
+🎮 Items más jugados
 
-2. Items más jugados:
-
-Descripción: Devuelve una lista de los ítems (juegos) más jugados.
+Descripción: Lista de los juegos más jugados.
 URL: /items/most_played?limit=10&offset=0
-Respuesta: Lista de ítems con información de jugabilidad.
+Respuesta: Información de jugabilidad de los juegos.
+😊 Reseñas positivas
 
-3. Reseñas positivas:
-
-Descripción: Obtiene una lista de reseñas con sentimiento positivo.
+Descripción: Reseñas con sentimiento positivo.
 URL: /reviews/positive?limit=10&offset=0
-Respuesta: Lista de reseñas con análisis de sentimiento positivo.
+Respuesta: Lista de reseñas con sentimiento positivo.
+💸 Juegos gratuitos
 
-4. Juegos gratuitos:
-
-Descripción: Obtiene una lista de juegos que son gratuitos.
+Descripción: Juegos disponibles de forma gratuita.
 URL: /games/free?limit=10&offset=0
 Respuesta: Lista de juegos con precio igual a cero.
+🎯 Juegos de género Action
 
-5. Juegos de género Action:
-
-Descripción: Filtra y devuelve los juegos del género "Action".
+Descripción: Juegos filtrados por el género "Action".
 URL: /games/action?limit=10&offset=0
-
 Respuesta: Lista de juegos del género de acción.
+📏 Reseñas más largas
 
-6. Reseñas más largas:
-
-Descripción: Obtiene una lista de reseñas con mayor longitud.
+Descripción: Reseñas ordenadas por longitud.
 URL: /reviews/longest?limit=10&offset=0
-Respuesta: Lista de reseñas ordenadas por la longitud de texto.
-
-Tecnologías Utilizadas
-FastAPI: Framework para la creación de APIs rápidas y eficientes.
-Ngrok: Herramienta para exponer la API de forma local para pruebas rápidas.
-Render: Plataforma de despliegue para la API.
-Pandas: Librería utilizada para el procesamiento y análisis de los datos.
-Python: Lenguaje principal del proyecto.
-Despliegue
-El proyecto ha sido desplegado exitosamente en Render. Para acceder a la API en Render, puedes utilizar la URL:
-(https://project1steam-game-recommendation-api.onrender.com)
-Instrucciones Adicionales
-Para cualquier duda o sugerencia, puedes ponerte en contacto a través de GitHub o abrir un "issue" en el repositorio.
+Respuesta: Lista de reseñas con mayor longitud de texto.
 
 
+🔧 Tecnologías Utilizadas
+FastAPI 🚀: Framework para crear APIs rápidas y eficientes.
+Ngrok 🌐: Herramienta para exponer la API de forma local para pruebas rápidas.
+Render 🚀: Plataforma de despliegue para la API.
+Pandas 📊: Librería para el procesamiento y análisis de datos.
+Python 🐍: Lenguaje principal del proyecto.
+
+🚀 Despliegue
+El proyecto ha sido desplegado exitosamente en Render. Para acceder a la API, utiliza:
+
+🔗 https://project1steam-game-recommendation-api.onrender.com
+
+📬 Instrucciones Adicionales
+Para dudas o sugerencias, contáctanos en GitHub o abre un "issue" en el repositorio.
 
 
 
