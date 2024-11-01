@@ -1,5 +1,6 @@
 
- ![banner-proyecto-1](https://github.com/user-attachments/assets/636b5174-2b09-45a4-a2d2-df92a7a36b25)
+![logo-2-steam-game-recommendation](https://github.com/user-attachments/assets/c285e6d5-8a4e-4da0-97b4-d668e87992b9)
+
    
 
 🚀 Proyecto Individual de MLOps: Sistema de Recomendación de Videojuegos
