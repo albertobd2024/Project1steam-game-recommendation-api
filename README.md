@@ -11,24 +11,18 @@ Análisis de reseñas de usuarios 📝
 Clasificación de juegos por popularidad, género, y más 💡
 
 🛠️ Clonación e Instalación
-Clonar el repositorio
-
-bash
-Copiar código
+1. Clonar el repositorio
 git clone https://github.com/albertobd2024/Project1steam-game-recommendation-api.git
 cd Project1steam-game-recommendation-api
-Instalar dependencias
-Asegúrate de tener Python 3.7 o superior. Instala las dependencias:
 
-bash
-Copiar código
+2. Instalar dependencias
+Asegúrate de tener Python 3.7 o superior. Instala las dependencias:
 pip install -r requirements.txt
 
 🏃‍♂️ Ejecución de la API Localmente
 Para ejecutar la API en tu entorno local, usa:
 
-bash
-Copiar código
+
 uvicorn main:app --reload
 🌐 Acceso desde Render
 El proyecto está desplegado en Render y accesible en:
@@ -44,7 +38,6 @@ Descripción: Endpoint de bienvenida para verificar el funcionamiento de la API.
 URL: /
 Respuesta:
 json
-Copiar código
 {"message": "API is working!"}
 🎮 Items más jugados
 
